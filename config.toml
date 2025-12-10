@@ -16,7 +16,7 @@ cli_source = "inotia00/revanced-cli"
 [[apps]]
 name = "YouTube"
 pkg_name = "com.google.android.youtube"
-version = "lastest" # PENTING: Cek target version di repo inotia00/revanced-patches!
+version = "auto" # PENTING: Cek target version di repo inotia00/revanced-patches!
 build_mode = "module" # Output jadi zip Magisk
 
 # --- PENGATURAN EXCLUDE (Hapus Branding) ---
