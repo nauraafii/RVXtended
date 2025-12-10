@@ -6,43 +6,24 @@ parallel-jobs = 1
 
 # you can use rvmm-config-gen to generate a config
 
-[YouTube]
-enabled = false
-build-mode = "both"
-excluded-patches = ""
-included-patches = ""
-version = "auto"
-apkmirror-dlurl = "https://www.apkmirror.com/apk/google-inc/youtube"
-uptodown-dlurl = "https://youtube.en.uptodown.com/android"
-archive-dlurl = "https://archive.org/download/jhc-apks/apks/com.google.android.youtube"
+# --- BAGIAN TOOLS (Wajib Inotia00) ---
+[tools]
+patches_source = "inotia00/revanced-patches"
+integrations_source = "inotia00/revanced-integrations"
+cli_source = "inotia00/revanced-cli"
 
-[Music]
-enabled = false
-build-mode = "both"
-arch = "both"
-apkmirror-dlurl = "https://www.apkmirror.com/apk/google-inc/youtube-music"
-uptodown-dlurl = "https://youtube-music.en.uptodown.com/android"
-archive-dlurl = "https://archive.org/download/jhc-apks/apks/com.google.android.apps.youtube.music"
+# --- BAGIAN APLIKASI ---
+[[apps]]
+name = "YouTube"
+pkg_name = "com.google.android.youtube"
+version = "lastest" # PENTING: Cek target version di repo inotia00/revanced-patches!
+build_mode = "module" # Output jadi zip Magisk
 
-[GooglePhotos]
-enabled = false
-build-mode = "both"
-arch = "both"
-version = "auto"
-apkmirror-dlurl = "https://www.apkmirror.com/apk/google-inc/photos/"
-uptodown-dlurl = "https://google-photos.en.uptodown.com/android"
-archive-dlurl = "https://archive.org/download/jhc-apks/apks/com.google.android.apps.photos"
-
-[Spotify]
-enabled = false
-uptodown-dlurl = "https://spotify.en.uptodown.com/android"
-archive-dlurl = "https://archive.org/download/jhc-apks/apks/com.spotify.music"
-
-[YouTube-Extended]
-app-name = "YouTube"
-rv-brand = "ReVanced Extended"
-patches-source = "inotia00/revanced-patches"
-cli-source = "inotia00/revanced-cli"
-apkmirror-dlurl = "https://www.apkmirror.com/apk/google-inc/youtube"
-build-mode = "module"
-excluded-patches = "'Custom branding' 'Alternative thumbnails' 'Announcements' 'Enable debugging' 'GmsCore support'"
+# --- PENGATURAN EXCLUDE (Hapus Branding) ---
+excluded_patches = [
+    "custom-branding-name",      # Nama balik jadi "YouTube"
+    "custom-branding-icon",      # Icon balik jadi Merah Original
+    "custom-splash-animation",   # Animasi loading asli
+    "debugging",                 # Buang log sampah (wajib)
+    "gms-core-support"           # BENAR di-exclude HANYA jika Anda ROOT/Magisk
+]
