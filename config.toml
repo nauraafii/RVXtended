@@ -18,6 +18,7 @@ name = "YouTube"
 pkg_name = "com.google.android.youtube"
 version = "auto" # PENTING: Cek target version di repo inotia00/revanced-patches!
 build_mode = "module" # Output jadi zip Magisk
+apkmirror-dlurl = "https://www.apkmirror.com/apk/google-inc/youtube"
 
 # --- PENGATURAN EXCLUDE (Hapus Branding) ---
 excluded_patches = [
